@@ -1,42 +1,13 @@
 import ArticleList from "../components/ArticleList"
 import ArticleTeaser from "../components/ArticleTeaser"
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 
 import {useState, useEffect} from 'react'
 
 function HomePage ({articles}){
 
-    const [searchTitle, setSearchTitle] = useState('')
-    const [results, setResults] = useState([])
-
-    const handleChange = (event) => {
-        const value = event.target.value
-        console.log(`${value} val changed`)
-
-        setSearchTitle(value)
-    }
-
-    useEffect(() => {
-        if(searchTitle != ''){
-            const filteredArticles = articles.filter(article => article.title.includes(searchTitle))
-            setResults(filteredArticles)
-        }
-    },[searchTitle])
-
-
     return (
         <div>
-            <Form >
-                <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                    onChange={(event)=>{handleChange(event)}}
-                />
-            {/* <Button variant="outline-success ">Search</Button> */}
-          </Form>
-            <div>
+            {/* <div>
             {
                 results
                 ? <div >
@@ -46,7 +17,7 @@ function HomePage ({articles}){
                 ))}</div>
                 : ''
             }
-            </div>
+            </div> */}
             
             <hr/>
             <h2>All Articles</h2>
